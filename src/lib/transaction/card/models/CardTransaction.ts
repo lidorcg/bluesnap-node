@@ -17,6 +17,7 @@ export interface CardTransactionResponse extends ValidatedResponse {
     walletId?: number;
     wallet?: WalletResponse;
     amount: number;
+    usdAmount: number;
     vaultedShopperId: number;
     merchantTransactionId?: string;
     softDescriptor?: string;
