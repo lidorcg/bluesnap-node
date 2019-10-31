@@ -5,7 +5,8 @@ import {
     AltTransactionSepaDdResponse
 } from '../../../../../src/lib/transaction/alt/sepaDirectDebit/models/AltTransactionSepaDirectDebit';
 
-describe('SepaDirectDebitTransactionGateway Integration Test', () => {
+// Disable while automated test is not setup for this gateway.
+xdescribe('SepaDirectDebitTransactionGateway Integration Test', () => {
     let sepaDdTransaction: AltTransactionSepaDdResponse;
 
     const mockSepaDirectDebit = {
