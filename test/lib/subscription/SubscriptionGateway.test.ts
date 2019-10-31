@@ -7,7 +7,8 @@ import {PlanRequest, PlanResponse} from '../../../src/lib/subscription/models/Pl
 import {SubscriptionListResponse} from '../../../src/lib/subscription/models/SubscriptionList';
 import {ChargeListResponse} from '../../../src/lib/subscription/models/ChargeList';
 
-describe('SubscriptionGateway Integration Test', () => {
+// Disable while automated test is not setup for this gateway.
+xdescribe('SubscriptionGateway Integration Test', () => {
     let plan: PlanResponse;
     let subscription: SubscriptionResponse;
     let merchantManagedSubscription: SubscriptionResponse;

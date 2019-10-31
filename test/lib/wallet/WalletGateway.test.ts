@@ -4,7 +4,8 @@ import {VisaCheckoutWalletRequest, VisaCheckoutWalletResponse} from '../../../sr
 import {MasterpassWalletRequest, MasterpassWalletResponse} from '../../../src/lib/wallet/models/MasterpassWallet';
 import {GetWalletResponse} from '../../../src/lib/wallet/models/GetWallet';
 
-describe('WalletGateway Integration Test', () => {
+// Disable while automated test is not setup for this gateway.
+xdescribe('WalletGateway Integration Test', () => {
     let wallet: VisaCheckoutWalletResponse;
 
     async function createWallet() {

@@ -5,7 +5,8 @@ import {
     AltTransactionPayPalResponse
 } from '../../../../../src/lib/transaction/alt/paypal/models/AltTransactionPayPal';
 
-describe('PayPalTransactionGatewat Integration Test', () => {
+// Disable while automated test is not setup for this gateway.
+xdescribe('PayPalTransactionGateway Integration Test', () => {
     let paypalTransaction: AltTransactionPayPalResponse;
 
     async function createPayPalTransaction() {
