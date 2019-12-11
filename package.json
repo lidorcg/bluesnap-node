@@ -8,6 +8,7 @@
     "dist"
   ],
   "scripts": {
+    "prepublish": "npm run compile",
     "compile": "npm run generate-barrels && tsc --declaration",
     "generate-barrels": "barrelsby -d src/lib --singleQuotes --delete",
     "lint": "eslint \"src/**\"",
