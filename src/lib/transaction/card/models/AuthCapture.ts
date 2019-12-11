@@ -16,7 +16,7 @@ export interface AuthCaptureRequest {
     softDescriptor?: string;
     descriptorPhoneNumber?: string;
     vendorsInfo?: VendorsInfoRequest;
-    cardHoldersInfo?: CardHolderInfoRequest;
+    cardHolderInfo?: CardHolderInfoRequest;
     currency: string;
     transactionFraudInfo?: TransactionFraudInfoRequest;
     creditCard?: CreditCardRequest;
@@ -37,7 +37,7 @@ export interface AuthRequest {
     softDescriptor?: string;
     descriptorPhoneNumber?: string;
     vendorsInfo?: VendorsInfoRequest;
-    cardHoldersInfo?: CardHolderInfoRequest;
+    cardHolderInfo?: CardHolderInfoRequest;
     currency: string;
     transactionFraudInfo?: TransactionFraudInfoRequest;
     creditCard?: CreditCardRequest;
