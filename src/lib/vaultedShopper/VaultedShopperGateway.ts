@@ -24,4 +24,9 @@ export class VaultedShopperGateway {
         const path = `/services/2/vaulted-shoppers/${shopperId}`;
         return this.http.get(path);
     }
+
+    public async getByMerchantShopperId(merchantShopperId: string): Promise<VaultedShopperResponse> {
+        const path = `/services/2/vaulted-shoppers/merchant/${merchantShopperId}`;
+        return this.http.get(path);
+    }
 }
