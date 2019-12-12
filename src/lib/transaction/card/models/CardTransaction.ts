@@ -23,7 +23,7 @@ export interface CardTransactionResponse extends ValidatedResponse {
     softDescriptor?: string;
     descriptorPhoneNumber?: string;
     vendorsInfo?: VendorsInfoResponse;
-    cardHoldersInfo?: CardHolderInfoResponse;
+    cardHolderInfo?: CardHolderInfoResponse;
     currency: string;
     transactionFraudInfo?: TransactionFraudInfoResponse;
     creditCard?: CreditCardResponse;
