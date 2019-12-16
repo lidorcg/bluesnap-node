@@ -1,6 +1,6 @@
 {
   "name": "bluesnap",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "Node SDK for the BlueSnap Payment Gateway",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
