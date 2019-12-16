@@ -32,6 +32,7 @@ export * from './marketplace/models/VendorsRefundInfo';
 export * from './marketplace/models/Verification';
 export * from './refund/RefundGateway';
 export * from './refund/models/Refund';
+export * from './refund/models/RefundTransaction';
 export * from './refund/models/Refunds';
 export * from './subscription/SubscriptionGateway';
 export * from './subscription/models/Charge';
