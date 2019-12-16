@@ -12,3 +12,11 @@ export interface RefundResponse {
     vendorAmount: number;
     vendorsRefundInfo: VendorsRefundInfoResponse;
 }
+
+export type RefundRequestQueryParams = {
+    amount?: number;
+    reason?: string;
+    cancelsubscriptions?: boolean;
+} & {
+    [key: string]: number; // Dynamic key for vendor, formatted as: vendor.${vendorId}.amount
+}
