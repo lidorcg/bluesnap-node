@@ -12,7 +12,7 @@ export type RefundRequestQueryParams = {
 }
 
 /**
- * Refund transactions will return null if successful.
+ * Refund transactions will return null if successful. An error response can be a string or a validated response.
  */
-export type RefundTransactionResponse = ValidatedResponse | null;
+export type RefundTransactionResponse = ValidatedResponse | string | null;
 
