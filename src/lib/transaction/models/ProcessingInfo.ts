@@ -8,4 +8,6 @@ export interface ProcessingInfoResponse {
     avsResponseCodeZip: string;
     avsResponseCodeAddress: string;
     avsResponseCodeName: string;
+    authorizationCode: string;
+    networkTransactionId: string;
 }
