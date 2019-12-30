@@ -45,7 +45,7 @@ describe('VaultedShopperGateway Integration Test', () => {
 
     describe('getByMerchantShopperId()', () => {
         test('should get a vaulted shopper by the merchant shopper id', async () => {
-            const merchantShopperId = faker.random.alphaNumeric();
+            const merchantShopperId = faker.random.alphaNumeric(8);
             const merchantShopper = await gateway.shopper.create({ firstName: faker.name.firstName(), lastName: faker.name.lastName(), merchantShopperId, });
             const response: VaultedShopperResponse = await gateway.shopper.getByMerchantShopperId(merchantShopperId);
             expect(response.vaultedShopperId).toEqual(merchantShopper.vaultedShopperId);
