@@ -6,6 +6,7 @@ import { CreditCardRequest } from './CreditCard';
 import { WalletRequest } from '../../../wallet/models/Wallet';
 import { VendorsInfoRequest } from '../../../marketplace/models/VendorsInfo';
 import { TransactionFraudInfoRequest } from '../../models/TransactionFraudInfo';
+import { NetworkTransactionInfoRequest } from '../../models/NetworkTransactionInfoRequest';
 
 export interface AuthCaptureRequest {
     walletId?: number;
@@ -26,6 +27,8 @@ export interface AuthCaptureRequest {
     pfToken?: string;
     level3Data?: Level3DataRequest;
     storeCard?: boolean;
+    networkTransactionInfo?: NetworkTransactionInfoRequest;
+    transactionInitiator?: string;
 }
 
 export interface AuthRequest {
