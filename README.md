@@ -2,6 +2,12 @@
 
 A node sdk for the [BlueSnap API](https://developers.bluesnap.com/v8976-JSON/docs). Built with TypeScript definitions.
 
+## Developing
+```
+npm install
+```
+Copy your sandbox username & password into a `config/test.yml` file in order to be able to run the tests.
+
 ## Getting Started
 
 ### Installation

@@ -65,6 +65,7 @@ export * from './transaction/models/FraudResultInfo';
 export * from './transaction/models/Level3Data';
 export * from './transaction/models/Level3DataItems';
 export * from './transaction/models/MetaData';
+export * from './transaction/models/NetworkTransactionInfoRequest';
 export * from './transaction/models/ProcessingInfo';
 export * from './transaction/models/ThreeDSecure';
 export * from './transaction/models/TransactionFraudInfo';
