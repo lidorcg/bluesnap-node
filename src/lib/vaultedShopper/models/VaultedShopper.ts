@@ -26,6 +26,7 @@ export interface VaultedShopperRequest {
     phone?: string;
     companyName?: string;
     shopperCurrency?: string;
+    personalIdentificationNumber?: string;
     shippingContactInfo?: ShippingContactInfoRequest;
     walletId?: number;
     transactionFraudInfo?: TransactionFraudInfoRequest;
