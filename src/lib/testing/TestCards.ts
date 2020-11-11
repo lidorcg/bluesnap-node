@@ -53,7 +53,7 @@ export class TestCards {
     };
 
     public readonly VISA_BRL_SUCCESS1: TestCard = {
-        cardType: 'VISA', cardNumber: '4007702835532454', expirationMonth: '10', expirationYear: '2020', cvvCode: '123',
+        cardType: 'VISA', cardNumber: '4007702835532454', expirationMonth: '10', expirationYear: '2023', cvvCode: '123',
     };
 
     public readonly VISA_FAILURE: TestCard = {
