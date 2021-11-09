@@ -1,65 +1,62 @@
-import fetch from 'node-fetch';
-import { BlueSnapConfig } from '../bluesnap/BlueSnapConfig';
+import axios from "axios";
+import { BlueSnapConfig } from "../bluesnap/BlueSnapConfig";
 
 export class HttpClient {
-    private config: BlueSnapConfig;
+  private config: BlueSnapConfig;
 
-    public constructor(config: BlueSnapConfig) {
-        this.config = config;
+  public constructor(config: BlueSnapConfig) {
+    this.config = config;
+  }
+
+  public async get(path: string): Promise<any> {
+    return axios({
+      method: "GET",
+      url: `${this.config.getBaseUrl()}${path}`,
+      headers: this.getHeaders(),
+    }).then((response) => response.data);
+  }
+
+  public async post(
+    path: string,
+    data?: Record<string, any> | null
+  ): Promise<any> {
+    return axios({
+      method: "POST",
+      url: `${this.config.getBaseUrl()}${path}`,
+      headers: this.getHeaders(),
+      data,
+    }).then((response) => (response.status == 201 ? response : response.data));
+  }
+
+  public async put(
+    path: string,
+    data?: Record<string, any> | null
+  ): Promise<any> {
+    return axios({
+      method: "PUT",
+      url: `${this.config.getBaseUrl()}${path}`,
+      headers: this.getHeaders(),
+      data,
+    }).then((response) => (response.status == 204 ? null : response.data));
+  }
+
+  private getHeaders(): Record<string, any> {
+    const headers: Record<string, any> = {
+      Authorization: this.getAuthorizationHeader(),
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    };
+
+    if (this.config.apiVersion) {
+      headers["bluesnap-version"] = this.config.apiVersion;
     }
 
-    public async get(path: string): Promise<any> {
-        const response = await fetch(`${this.config.getBaseUrl()}${path}`, {
-            method: 'GET',
-            headers: this.getHeaders(),
-        });
+    return headers;
+  }
 
-        return await response.json();
-    }
-
-    public async post(path: string, body?: Record<string, any> | null): Promise<any> {
-        const response = await fetch(`${this.config.getBaseUrl()}${path}`, {
-            method: 'POST',
-            headers: this.getHeaders(),
-            body: JSON.stringify(body),
-        });
-
-        if (response.status === 201) {
-            return response;
-        }
-
-        return await response.json();
-    }
-
-    public async put(path: string, body?: Record<string, any> | null): Promise<any> {
-        const response = await fetch(`${this.config.getBaseUrl()}${path}`, {
-            method: 'PUT',
-            headers: this.getHeaders(),
-            body: JSON.stringify(body),
-        });
-
-        if (response.status === 204) {
-            return null;
-        }
-
-        return await response.json();
-    }
-
-    private getHeaders(): Record<string, any> {
-        const headers: Record<string, any> = {
-            Authorization: this.getAuthorizationHeader(),
-            Accept: 'application/json',
-            'Content-Type': 'application/json',
-        };
-
-        if (this.config.apiVersion) {
-            headers['bluesnap-version'] = this.config.apiVersion;
-        }
-
-        return headers;
-    }
-
-    private getAuthorizationHeader(): string {
-        return `Basic ${Buffer.from(`${this.config.username}:${this.config.password}`).toString('base64')}`;
-    }
+  private getAuthorizationHeader(): string {
+    return `Basic ${Buffer.from(
+      `${this.config.username}:${this.config.password}`
+    ).toString("base64")}`;
+  }
 }

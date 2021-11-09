@@ -5,7 +5,7 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "outDir": "./dist",
-    "types": ["jest"],
+    "types": ["node","jest"],
 
     // For debugging
     "sourceMap": true,
