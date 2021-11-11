@@ -1,6 +1,6 @@
 {
-  "name": "bluesnap",
-  "version": "0.3.3",
+  "name": "@productive-labs/productive-bluesnap",
+  "version": "0.4.0",
   "description": "Node SDK for the BlueSnap Payment Gateway",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Footage-Firm/bluesnap-node.git"
+    "url": "git+https://github.com/lidorcg/bluesnap-node"
   },
   "keywords": [
     "bluesnap",
@@ -26,12 +26,8 @@
     "payments",
     "typescript"
   ],
-  "author": "Sam Rubin <https://github.com/smrubin>",
+  "author": "productive-labs",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Footage-Firm/bluesnap-node/issues"
-  },
-  "homepage": "https://github.com/Footage-Firm/bluesnap-node#readme",
   "dependencies": {
     "axios": "^0.24.0"
   },

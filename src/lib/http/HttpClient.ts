@@ -9,35 +9,38 @@ export class HttpClient {
   }
 
   public async get(path: string): Promise<any> {
-    return axios({
+    const response = await axios({
       method: "GET",
       url: `${this.config.getBaseUrl()}${path}`,
       headers: this.getHeaders(),
-    }).then((response) => response.data);
+    });
+    return response.data;
   }
 
   public async post(
     path: string,
     data?: Record<string, any> | null
   ): Promise<any> {
-    return axios({
+    const response = await axios({
       method: "POST",
       url: `${this.config.getBaseUrl()}${path}`,
       headers: this.getHeaders(),
       data,
-    }).then((response) => (response.status == 201 ? response : response.data));
+    });
+    return (response.status == 201 ? response : response.data);
   }
 
   public async put(
     path: string,
     data?: Record<string, any> | null
   ): Promise<any> {
-    return axios({
+    const response = await axios({
       method: "PUT",
       url: `${this.config.getBaseUrl()}${path}`,
       headers: this.getHeaders(),
       data,
-    }).then((response) => (response.status == 204 ? null : response.data));
+    });
+    return (response.status == 204 ? null : response.data);
   }
 
   private getHeaders(): Record<string, any> {
